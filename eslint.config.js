@@ -1,5 +1,30 @@
 import antfu from '@antfu/eslint-config'
 
 export default antfu({
-  ignores: ["node_modules/","**/node_modules/**/","pnpm-lock.yaml","**/pnpm-lock.yaml/**","package-lock.json","**/package-lock.json/**","yarn.lock","**/yarn.lock/**","dist/","**/dist/**/","build/","**/build/**/","out/","**/out/**/",".next/","**/.next/**/",".nuxt/","**/.nuxt/**/",".cache/","**/.cache/**/",".parcel-cache/","**/.parcel-cache/**/",".turbo/","**/.turbo/**/",".env","**/.env/**",".env.local","**/.env.local/**",".env.development.local","**/.env.development.local/**",".env.test.local","**/.env.test.local/**",".env.production.local","**/.env.production.local/**","logs/","**/logs/**/","*.log","**/*.log/**","npm-debug.log*","**/npm-debug.log*/**","yarn-debug.log*","**/yarn-debug.log*/**","yarn-error.log*","**/yarn-error.log*/**","pnpm-debug.log*","**/pnpm-debug.log*/**","pids/","**/pids/**/","*.pid","**/*.pid/**","*.seed","**/*.seed/**","*.pid.lock","**/*.pid.lock/**","coverage/","**/coverage/**/","*.lcov","**/*.lcov/**",".nyc_output/","**/.nyc_output/**/","jspm_packages/","**/jspm_packages/**/",".npm","**/.npm/**",".eslintcache","**/.eslintcache/**",".rpt2_cache/","**/.rpt2_cache/**/",".rts2_cache_cjs/","**/.rts2_cache_cjs/**/",".rts2_cache_es/","**/.rts2_cache_es/**/",".rts2_cache_umd/","**/.rts2_cache_umd/**/",".node_repl_history","**/.node_repl_history/**","*.tgz","**/*.tgz/**",".yarn-integrity","**/.yarn-integrity/**",".env.test","**/.env.test/**",".parcel-cache","**/.parcel-cache/**",".vscode-test","**/.vscode-test/**",".yarn/cache",".yarn/cache/**",".yarn/unplugged",".yarn/unplugged/**",".yarn/build-state.yml",".yarn/build-state.yml/**",".yarn/install-state.gz",".yarn/install-state.gz/**",".pnp.*","**/.pnp.*/**",".vscode/","**/.vscode/**/",".idea/","**/.idea/**/","*.swp","**/*.swp/**","*.swo","**/*.swo/**","*~","**/*~/**",".DS_Store","**/.DS_Store/**",".DS_Store?","**/.DS_Store?/**","._*","**/._*/**",".Spotlight-V100","**/.Spotlight-V100/**",".Trashes","**/.Trashes/**","ehthumbs.db","**/ehthumbs.db/**","Thumbs.db","**/Thumbs.db/**","*.tmp","**/*.tmp/**","*.temp","**/*.temp/**"],
-})
+    type: "app",
+    typescript: true,
+    formatters: true,
+    stylistic: {
+      indent: 2,
+      semi: true,
+      quotes: "double",
+    },
+  }, {
+    rules: {
+      "ts/no-redeclare": "off",
+      "ts/consistent-type-definitions": ["error", "interface"],
+      "no-console": ["warn"],
+      "antfu/no-top-level-await": ["off"],
+      "node/prefer-global/process": ["off"],
+      "n/no-process-env": ["error", {
+        allowedVariables: ["JWT_SECRET", "DATABASE_URL", "PORT"],
+      }],
+      "perfectionist/sort-imports": ["error", {
+        tsconfigRootDir: ".",
+      }],
+      "unicorn/filename-case": ["error", {
+        case: "kebabCase",
+        ignore: ["README.md"],
+      }],
+    },
+  });
