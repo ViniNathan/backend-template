@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec tsx src/server.ts",
     "lint": "eslint . --ext .js,.ts,.mjs,.cjs,.mts,.cts",
     "lint:fix": "eslint . --ext .js,.ts,.mjs,.cjs,.mts,.cts --fix",
     "lint:check": "eslint . --ext .js,.ts,.mjs,.cjs,.mts,.cts --max-warnings 0",
