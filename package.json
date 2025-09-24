@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec tsx src/server.ts",
     "lint": "eslint . --ext .js,.ts,.mjs,.cjs,.mts,.cts",
     "lint:fix": "eslint . --ext .js,.ts,.mjs,.cjs,.mts,.cts --fix",
     "lint:check": "eslint . --ext .js,.ts,.mjs,.cjs,.mts,.cts --max-warnings 0",
@@ -22,7 +23,9 @@
     "eslint": "^9.35.0",
     "globals": "^16.4.0",
     "jiti": "^2.5.1",
+    "nodemon": "^3.1.10",
     "prettier": "3.6.2",
+    "tsx": "^4.20.5",
     "typescript-eslint": "^8.44.0"
   },
   "dependencies": {
