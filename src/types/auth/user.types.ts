@@ -1,7 +1,6 @@
-export interface User {
+export interface UserPublic {
   id: string;
   email: string;
-  password: string;
   isActive: boolean;
   createdAt: Date;
   updatedAt: Date;
