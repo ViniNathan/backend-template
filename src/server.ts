@@ -1,43 +1,44 @@
+import swagger from "@fastify/swagger";
+import swaggerUi from "@fastify/swagger-ui";
 // Import the framework and instantiate it
-import Fastify from 'fastify'
-import swagger from '@fastify/swagger'
-import swaggerUi from '@fastify/swagger-ui'
+import Fastify from "fastify";
 
 const fastify = Fastify({
-  logger: true
-})
+  logger: true,
+});
 
 // Register Swagger
 fastify.register(swagger, {
   openapi: {
-    openapi: '3.0.0',
+    openapi: "3.0.0",
     info: {
-      title: 'Backend Template API',
-      description: 'API documentation for Backend Template',
-      version: '1.0.0'
+      title: "Backend Template API",
+      description: "API documentation for Backend Template",
+      version: "1.0.0",
     },
     servers: [
       {
-        url: 'http://localhost:3000',
-        description: 'Development server'
-      }
-    ]
-  }
-})
+        url: "http://localhost:3000",
+        description: "Development server",
+      },
+    ],
+  },
+});
 
 // Register Swagger UI
 fastify.register(swaggerUi, {
-  routePrefix: '/docs',
+  routePrefix: "/docs",
   uiConfig: {
-    docExpansion: 'full',
+    docExpansion: "full",
     deepLinking: true,
   },
-})
+});
 
 // Run the server!
 try {
-  await fastify.listen({ port: 3000 })
-} catch (err) {
-  fastify.log.error(err)
-  process.exit(1)
+  await fastify.listen({ port: 3000 });
+}
+catch (err) {
+  fastify.log.error(err);
+  process.exit(1);
 }
