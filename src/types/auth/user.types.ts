@@ -9,6 +9,7 @@ export interface UserPublic {
 export interface CreateUserRequest {
   email: string;
   password: string;
+  confirmPassword: string;
 }
 
 export interface LoginRequest {
