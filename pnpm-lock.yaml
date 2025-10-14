@@ -14,9 +14,18 @@ importers:
       '@fastify/swagger-ui':
         specifier: ^5.2.3
         version: 5.2.3
+      '@prisma/client':
+        specifier: 6.16.2
+        version: 6.16.2(prisma@6.16.2(typescript@5.9.2))(typescript@5.9.2)
+      bcryptjs:
+        specifier: 2.4.3
+        version: 2.4.3
       fastify:
         specifier: ^5.6.1
         version: 5.6.1
+      zod:
+        specifier: ^4.0.0
+        version: 4.1.11
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^5.4.1
@@ -465,6 +474,18 @@ packages:
     resolution: {integrity: sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
+  '@prisma/client@6.16.2':
+    resolution: {integrity: sha512-E00PxBcalMfYO/TWnXobBVUai6eW/g5OsifWQsQDzJYm7yaY+IRLo7ZLsaefi0QkTpxfuhFcQ/w180i6kX3iJw==}
+    engines: {node: '>=18.18'}
+    peerDependencies:
+      prisma: '*'
+      typescript: '>=5.1.0'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+      typescript:
+        optional: true
+
   '@prisma/config@6.16.2':
     resolution: {integrity: sha512-mKXSUrcqXj0LXWPmJsK2s3p9PN+aoAbyMx7m5E1v1FufofR1ZpPoIArjjzOIm+bJRLLvYftoNYLx1tbHgF9/yg==}
 
@@ -729,6 +750,9 @@ packages:
   baseline-browser-mapping@2.8.6:
     resolution: {integrity: sha512-wrH5NNqren/QMtKUEEJf7z86YjfqW/2uw3IL3/xpqZUC95SSVIFXYQeeGjL6FT/X68IROu6RMehZQS5foy2BXw==}
     hasBin: true
+
+  bcryptjs@2.4.3:
+    resolution: {integrity: sha512-V/Hy/X9Vt7f3BbPJEi8BdVFMByHi+jNXrYkW3huaybV/kQ0KJg0Y6PkEMbn+zeT+i+SiKZ/HMqJGIIt4LZDqNQ==}
 
   binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
@@ -2117,6 +2141,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zod@4.1.11:
+    resolution: {integrity: sha512-WPsqwxITS2tzx1bzhIKsEs19ABD5vmCVa4xBo2tq/SrV4RNZtfws1EnCWQXM6yh8bD08a1idvkB5MZSBiZsjwg==}
+
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
@@ -2473,6 +2500,11 @@ snapshots:
 
   '@pkgr/core@0.2.9': {}
 
+  '@prisma/client@6.16.2(prisma@6.16.2(typescript@5.9.2))(typescript@5.9.2)':
+    optionalDependencies:
+      prisma: 6.16.2(typescript@5.9.2)
+      typescript: 5.9.2
+
   '@prisma/config@6.16.2':
     dependencies:
       c12: 3.1.0
@@ -2820,6 +2852,8 @@ snapshots:
   balanced-match@1.0.2: {}
 
   baseline-browser-mapping@2.8.6: {}
+
+  bcryptjs@2.4.3: {}
 
   binary-extensions@2.3.0: {}
 
@@ -4421,5 +4455,7 @@ snapshots:
   yaml@2.8.1: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@4.1.11: {}
 
   zwitch@2.0.4: {}
