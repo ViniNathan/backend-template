@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "jsx": "react",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*",
+    "generated"
+  ]
+}
